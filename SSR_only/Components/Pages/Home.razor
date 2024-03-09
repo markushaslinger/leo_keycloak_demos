@@ -1,0 +1,53 @@
+﻿@page "/"
+@using LeoAuth
+
+<PageTitle>Home</PageTitle>
+
+@if (_loading)
+{
+    <div class="loader"></div>
+}
+else
+{
+    if (!_isLoggedIn)
+    {
+        <p>You are not logged in</p>
+        <p>
+            <!-- Remember this is pure server side rendering, for a button click you would need JS! -->
+            <a href="/authorization/login" data-enhance-nav="false">Click here to log in</a>
+        </p>
+    }
+    else
+    {
+        if (_noData || _user == null)
+        {
+            <p>You are logged in, but no user information could be retrieved</p>
+        }
+        else
+        {
+            <p>The following information about you is now known to the application:</p>
+            <ul>
+                @foreach (var info in GetUserInfo(_user))
+                {
+                    <li>@info.Name: @info.Value</li>
+                }
+            </ul>
+        }
+        <p>
+            <a href="/authorization/logout" data-enhance-nav="false">Click here to log out</a>
+        </p>
+    }
+    
+}
+
+@code {
+
+    private bool _loading;
+    private bool _isLoggedIn;
+    private bool _noData;
+    private LeoUser? _user;
+    
+    [CascadingParameter]
+    public required HttpContext HttpContext { get; set; }
+    
+}

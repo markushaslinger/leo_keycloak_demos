@@ -1,0 +1,48 @@
+﻿@page "/"
+@using LeoAuth
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@attribute [Authorize]
+
+<PageTitle>Home</PageTitle>
+
+@if (_loading)
+{
+    <div class="loader"></div>
+}
+else
+{
+    <AuthorizeView>
+        <Authorized>
+            @if (_noData || _user == null)
+            {
+                <p>You are logged in, but no user information could be retrieved</p>
+            }
+            else
+            {
+                <p>The following information about you is now known to the application:</p>
+                <ul>
+                    @foreach (var info in GetUserInfo(_user))
+                    {
+                        <li>@info.Name: @info.Value</li>
+                    }
+                </ul>
+            }
+        </Authorized>
+        <NotAuthorized>
+            <p>You are not logged in</p>
+            <button class="btn btn-primary" @onclick="GoToLogin">Login</button>
+        </NotAuthorized>
+    </AuthorizeView>
+}
+
+
+@code {
+
+    private bool _loading;
+    private bool _noData;
+    private LeoUser? _user;
+    
+}

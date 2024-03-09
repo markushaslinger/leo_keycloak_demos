@@ -1,0 +1,32 @@
+﻿@page "/authorization/{action}"
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@using Microsoft.AspNetCore.Authentication.OpenIdConnect
+
+<PageTitle>KeyCloak Login/Logout</PageTitle>
+
+@code {
+    
+    [Parameter]
+    public string? Action { get; set; }
+    
+    [CascadingParameter]
+    public required HttpContext HttpContext { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var redirectProperties = new AuthenticationProperties { RedirectUri = "/" };
+        if (Action == "login")
+        {
+            await HttpContext.ChallengeAsync(OpenIdConnectDefaults.AuthenticationScheme, redirectProperties);
+        }
+        else if (Action == "logout")
+        {
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme, redirectProperties);
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        }
+    }
+    
+    
+
+}

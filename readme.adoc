@@ -1,0 +1,33 @@
+:icons: font
+
+= HTL-Leonding KeyCloak Authentication Demos
+
+IMPORTANT: These demos show a working, minimal setup to help you get started and are thus _not_ considered production ready!
+
+This repository contains the following demo applications -- *relevant for POSE & SYP* -- for performing a login via our KeyCloak instance and accessing the LDAP user information:
+
+* Server-side-rendering `SSR_only`
+** Pure server side rendering without client interactivity
+* Client- & Server side 'auto' rendering `Blazor_CSR_and_SSR`
+** Blazor application which runs SSR while it downloads the WASM in the background and switches automatically to CSR once done
+* SPA & WebAPI
+** The WebAPI for these projects is shared (`Shared_WebAPI`)
+** These samples also include simple, role based authorization
+** Demos:
+*** Blazor WASM `Blazor_WebAPI`
+*** Angular `Angular_WebAPI`
+
+CAUTION: All demos require you to set the `ClientSecret` for the LDAP service which you can request from a teacher -- without that it simply won't work!
+Look for the `TODO`.
+
+All demos make use of the following NuGet packages:
+
+* `HTLLeonding.Utility.LeoAuth`
+** Contains utility classes for processing a `ClaimsPrincipal` and extracting data like department, teacher/student, name, etc.
+** Also contains a `PersistentAuthenticationStateProvider` required when using Blazor with automatic render mode
+* `HTLLeonding.Utility.LeoAuth.Server`
+** Provides some additional resources for backends -- cannot be included client side!
+*** Especially a `PersistingRevalidatingAuthenticationStateProvider` required when using Blazor with automatic render mode
+** It is sufficient to reference this package to get `LeoAuth` transitively
+
+NOTE: These packages are _not_ required, you can implement the processing of the LDAP claims yourself as well.
