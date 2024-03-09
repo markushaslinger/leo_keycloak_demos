@@ -1,0 +1,22 @@
+### Get access token - don't forget to input your user data and the client secret!
+
+POST https://auth.htl-leonding.ac.at/realms/htl-leonding/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id = htlleonding-service &
+client_secret = SECRET &
+grant_type = password &
+username = USER &
+password = PASS &
+scope = openid
+
+> {%
+    client.global.set("auth_token", response.body.id_token);
+    client.log("Bearer: " + client.global.get("auth_token"));
+%}
+
+### Have backend process token data
+
+GET {{baseUrl}}/demo/token-data
+Accept: application/json
+Authorization: Bearer {{auth_token}}
