@@ -7,14 +7,14 @@ IMPORTANT: These demos show a working, minimal setup to help you get started and
 This repository contains the following demo applications -- *relevant for POSE & SYP* -- for performing a login via our KeyCloak instance and accessing the LDAP user information:
 
 * SPA & WebAPI
-** The WebAPI for these projects is shared (`Shared_WebAPI`)
+** The WebAPI for these projects is shared (link:./Shared_WebAPI[`Shared_WebAPI`])
 ** These samples also include simple, role based authorization
 ** Demos:
-*** Blazor WASM `Blazor_WebAPI`
-*** Angular `Angular_WebAPI`
-* Server-side-rendering `SSR_only`
+*** Blazor WASM (link:./Blazor_WebAPI[`Blazor_WebAPI`])
+*** Angular (link:./Angular_WebAPI[`Angular_WebAPI`])
+* Server-side-rendering (link:./SSR_only[`SSR_only`])
 ** Pure server side rendering without client interactivity
-* Client- & Server side 'auto' rendering `Blazor_CSR_and_SSR`
+* Client- & Server side 'auto' rendering (link:./Blazor_CSR_and_SSR[`Blazor_CSR_and_SSR`])
 ** Blazor application which runs SSR while it downloads the WASM in the background and switches automatically to CSR once done
 
 CAUTION: All demos require you to set the `ClientSecret` for the LDAP service which you can request from a teacher -- without that it simply won't work!
@@ -22,10 +22,10 @@ Look for the `TODO`.
 
 All demos (except Angular of course) make use of the following NuGet packages:
 
-* `HTLLeonding.Utility.LeoAuth`
+* https://www.nuget.org/packages/HTLLeonding.Utility.LeoAuth[`HTLLeonding.Utility.LeoAuth`]
 ** Contains utility classes for processing a `ClaimsPrincipal` and extracting data like department, teacher/student, name, etc.
 ** Also contains a `PersistentAuthenticationStateProvider` required when using Blazor with automatic render mode
-* `HTLLeonding.Utility.LeoAuth.Server`
+* https://www.nuget.org/packages/HTLLeonding.Utility.LeoAuth.Server[`HTLLeonding.Utility.LeoAuth.Server`]
 ** Provides some additional resources for backends -- cannot be included client side!
 *** Especially a `PersistingRevalidatingAuthenticationStateProvider` required when using Blazor with automatic render mode
 ** It is sufficient to reference this package to get `LeoAuth` transitively
