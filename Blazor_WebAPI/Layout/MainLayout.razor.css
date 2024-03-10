@@ -1,0 +1,8 @@
+.outer {
+    --spacing: 0.5rem;
+    margin: var(--spacing);
+
+    .inner {
+        padding: var(--spacing);
+    }
+}

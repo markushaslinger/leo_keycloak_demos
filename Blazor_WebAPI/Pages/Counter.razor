@@ -1,0 +1,55 @@
+﻿@page "/counter"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@attribute [Authorize]
+
+<PageTitle>Counter</PageTitle>
+
+<div class="main-container">
+    <MudStack Row="@false" Spacing="4">
+        <MudText Typo="Typo.h6">Counter</MudText>
+        <MudStack Row="@false" Spacing="1">
+            <MudAlert Severity="Severity.Info">You can only click here if you are logged in.</MudAlert>
+            <MudText>
+                If you are a student each click increases the counter by 1, while for teachers it is increased by 2 (and decremented by 1 if we cannot establish the user role).
+            </MudText>
+            <MudText>Current count: @_currentCount</MudText>
+        </MudStack>
+        <MudButton Variant="Variant.Filled" Size="Size.Medium" Class="counter-button"
+                   Color="Color.Success" OnClick="@IncrementCount">
+            Click me
+        </MudButton>
+    </MudStack>
+</div>
+
+@code {
+    
+    // an alternative way to get the user's authentication state without the provider
+    [CascadingParameter]
+    public required Task<AuthenticationState> AuthenticationState { get; set; }
+    
+    private int _currentCount = 0;
+    private LeoUserRole _userRole = LeoUserRole.Unknown;
+
+    private void IncrementCount()
+    {
+        var increment = _userRole switch
+        {
+            LeoUserRole.Student => 1,
+            LeoUserRole.Teacher => 2,
+            _ => -1
+        };
+        
+        _currentCount += increment;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        var state = await AuthenticationState;
+        var leoUser = state.User.GetLeoUserInformation();
+        _userRole = leoUser.Match(user => user.Role,
+                                  _ => LeoUserRole.Unknown);
+    }
+
+}

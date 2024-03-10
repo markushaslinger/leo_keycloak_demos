@@ -1,0 +1,26 @@
+﻿@page "/api"
+@using BlazorClient.Core
+@inject IDialogService DialogService
+@inject IBackendService BackendService
+
+<div>
+    <MudStack Row="@false" Spacing="2">
+        <MudText Typo="Typo.h6">API Demo Requests</MudText>
+        <MudAlert Severity="Severity.Info">This component does not force authentication to allow for proper testing in all scenarios.</MudAlert>
+        <MudTable Dense="@true" Items="@_calls" Class="call-table" Striped="@true" Hover="@true">
+            <HeaderContent>
+                <MudTh>Call</MudTh>
+                <MudTh>Action</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd>@context.Call</MudTd>
+                <MudTd>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" 
+                               OnClick="@(async () => await context.Handler())">
+                        Call
+                    </MudButton>
+                </MudTd>
+            </RowTemplate>
+        </MudTable>
+    </MudStack>
+</div>

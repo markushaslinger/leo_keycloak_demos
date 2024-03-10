@@ -1,0 +1,54 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="@customTheme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar Elevation="1" Color="Color.Primary" Dense="@true">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(_ => DrawerToggle())"/>
+        <MudStack Row="@true" Justify="Justify.FlexStart" AlignItems="AlignItems.Center" Spacing="2">
+            <MudTooltip Delay="1000" Placement="Placement.End" Arrow="@true">
+                <ChildContent>
+                    <MudLink Underline="Underline.None" Href="/" Color="Color.Inherit" Typo="Typo.h5">Blazor KeyCloak Demo</MudLink>
+                </ChildContent>
+            </MudTooltip>
+        </MudStack>
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent Class="body">
+        <div class="outer">
+            <MudPaper>
+                <div class="inner">
+                    @Body
+                </div>
+            </MudPaper>
+        </div>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+
+    private bool _drawerOpen = true;
+    
+    private void DrawerToggle() => _drawerOpen = !_drawerOpen;
+    
+    private static readonly MudTheme customTheme = new()
+    {
+        Palette = new PaletteLight
+        {
+            Primary = new(55, 89, 153, 255),
+            Secondary = new(55, 129, 176, 255),
+            Tertiary = new(51, 152, 166, 255),
+            Success = new(113, 186, 58, 255),
+            Info = new(151, 179, 229, 255),
+            Warning = new(229, 210, 60, 255),
+            Error = new(229, 110, 106, 255),
+            BackgroundGrey = new(134, 125, 137, 255),
+            Divider = new(134, 125, 137, 255)
+        }
+    };
+
+}

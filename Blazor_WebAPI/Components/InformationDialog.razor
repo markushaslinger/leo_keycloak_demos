@@ -1,0 +1,22 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudStack Row="@false">
+            @Content
+        </MudStack>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Default" Variant="Variant.Filled" OnClick="@Cancel">Schließen</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+
+    [CascadingParameter]
+    public required MudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public required string Content { get; set; }
+
+    private void Cancel() => MudDialog.Cancel();
+
+}

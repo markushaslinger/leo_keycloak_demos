@@ -1,0 +1,4 @@
+::deep .login-logout-button {
+    max-width: 16rem;
+    align-self: flex-start;
+}
