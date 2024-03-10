@@ -1,0 +1,8 @@
+@if (isLoggedIn){
+  <span>You are logged in</span>
+  <button mat-button (click)="logout()">Logout</button>
+} @else {
+  <span>You are not logged in</span>
+  <button mat-button (click)="login()">Login</button>
+}
+
