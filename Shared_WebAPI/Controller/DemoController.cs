@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthDemoApi.Controller;
 
-//[Authorize]
+[Authorize]
 [ApiController]
 [Route("api/demo")]
 public sealed class DemoController : ControllerBase
@@ -19,6 +19,27 @@ public sealed class DemoController : ControllerBase
                                                       _ => NotFound());
     }
     
+    [HttpGet]
+    // the Authorize attribute of the controller is applied
+    [Route("at-least-logged-in")]
+    public IActionResult GetIfAtLeastLoggedIn() => Ok("You are at least logged in");
+
+    [HttpGet]
+    // Note: test users are treated like students
+    [Authorize(nameof(LeoUserRole.Student))]
+    [Route("at-least-student")]
+    public IActionResult GetIfAtLeastStudent() => Ok("You are at least a student");
+    
+    [HttpGet]
+    [Authorize(nameof(LeoUserRole.Teacher))]
+    [Route("is-teacher")]
+    public IActionResult GetIfTeacher() => Ok("You are a teacher");
+    
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("everyone-allowed")]
+    public IActionResult GetInAnyCase() => Ok("Everyone is allowed to see this");
+
     private static string[] GetUserInfo(LeoUser user)
     {
         List<string> data = [];
