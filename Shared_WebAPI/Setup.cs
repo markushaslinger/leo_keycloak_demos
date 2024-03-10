@@ -23,8 +23,8 @@ internal static class Setup
                     {
                         ValidateIssuerSigningKey = true,
                         ValidateIssuer = true,
-                        // currently the audience is not set by KeyCloak for access_token - turn off if not using id_token
-                        ValidateAudience = true,
+                        // currently the audience is not set by KeyCloak for access_token - turn off if not using id_token (which you should do only for testing purposes)
+                        ValidateAudience = false,
                         // currently token issued from KeyCloak expire after 1 minute - turn on once fixed
                         ValidateLifetime = false,
                         ClockSkew = TimeSpan.FromMinutes(1)
@@ -76,7 +76,7 @@ internal static class Setup
         {
             // TODO adjust origin if your client is not running on localhost:5005
             // origin has to be set if credentials are used (which we need)
-            const string Origin = "https://localhost:5005";
+            const string Origin = "http://localhost:5005";
 
             // this is _not_ a production configuration!
             b.WithOrigins(Origin)
