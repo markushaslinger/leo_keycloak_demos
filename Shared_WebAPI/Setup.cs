@@ -74,7 +74,7 @@ internal static class Setup
     {
         services.AddCors(o => o.AddPolicy(CorsPolicyName, b =>
         {
-            // TODO adjust origin if your client is not running on localhost:5005
+            // TODO adjust origin if your client is not running on localhost:5005 (or uses https)
             // origin has to be set if credentials are used (which we need)
             const string Origin = "http://localhost:5005";
 
