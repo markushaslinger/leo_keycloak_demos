@@ -21,12 +21,12 @@ public sealed class BackendService(IHttpClientFactory client, IAccessTokenProvid
     private IHttpClientFactory HttpClientFactory { get; } = client;
     private IAccessTokenProvider TokenProvider { get; } = tokenProvider;
     
-    // Note: exception handling here is very sloppy (just so the demos don't crash the app)
+    // Note: exception handling here is _very_ sloppy (just so the demos don't crash the app)
     // don't do that for real (instead log, return meaningful errors, etc.)
 
-    public ValueTask<OneOf<Success<string>, Error>> CheckLoggedIn() => PerformCheckCall("/at-least-logged-in");
-    public ValueTask<OneOf<Success<string>, Error>> CheckAtLeastStudent() => PerformCheckCall("/at-least-student");
-    public ValueTask<OneOf<Success<string>, Error>> CheckIsTeacher() => PerformCheckCall("/is-teacher");
+    public ValueTask<OneOf<Success<string>, Error>> CheckLoggedIn() => PerformCheckCall("at-least-logged-in");
+    public ValueTask<OneOf<Success<string>, Error>> CheckAtLeastStudent() => PerformCheckCall("at-least-student");
+    public ValueTask<OneOf<Success<string>, Error>> CheckIsTeacher() => PerformCheckCall("is-teacher");
 
     public async ValueTask<OneOf<Success<string>, Error>> CheckAnonymous()
     {
@@ -36,7 +36,7 @@ public sealed class BackendService(IHttpClientFactory client, IAccessTokenProvid
             // set the authorization header to anonymous for this test
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Anonymous");
 
-            var response = await client.GetAsync("/everyone-allowed");
+            var response = await client.GetAsync("everyone-allowed");
             if (!response.IsSuccessStatusCode)
             {
                 return new Error();
@@ -57,7 +57,7 @@ public sealed class BackendService(IHttpClientFactory client, IAccessTokenProvid
         try
         {
             var client = await GetClient();
-            var response = await client.GetAsync("/token-data");
+            var response = await client.GetAsync("token-data");
             if (!response.IsSuccessStatusCode)
             {
                 return new Error();
@@ -112,7 +112,7 @@ internal static class HttpClientSetup
     {
         services.AddHttpClient(BackendService.ClientName, client =>
         {
-            client.BaseAddress = new Uri("http://localhost:5050/api/demo");
+            client.BaseAddress = new Uri("http://localhost:5050/api/demo/");
             client.DefaultRequestHeaders.Add("Accept", "application/json");
         });
         services.AddScoped<IBackendService, BackendService>();
