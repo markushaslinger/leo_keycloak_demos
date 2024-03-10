@@ -9,15 +9,7 @@ namespace AuthDemoApi.Controller;
 [Route("api/demo")]
 public sealed class DemoController : ControllerBase
 {
-    [HttpGet]
-    [Route("token-data")]
-    public ActionResult<string[]> GetTokenData()
-    {
-        var userInfo = HttpContext.User.GetLeoUserInformation();
-
-        return userInfo.Match<ActionResult<string[]>>(user => Ok(GetUserInfo(user)),
-                                                      _ => NotFound());
-    }
+    // Note: route names do not follow rest conventions - demo purposes only
     
     [HttpGet]
     // the Authorize attribute of the controller is applied
@@ -39,6 +31,17 @@ public sealed class DemoController : ControllerBase
     [AllowAnonymous]
     [Route("everyone-allowed")]
     public IActionResult GetInAnyCase() => Ok("Everyone is allowed to see this");
+    
+    [HttpGet]
+    // the Authorize attribute of the controller is applied
+    [Route("token-data")]
+    public ActionResult<string[]> GetTokenData()
+    {
+        var userInfo = HttpContext.User.GetLeoUserInformation();
+
+        return userInfo.Match<ActionResult<string[]>>(user => Ok(GetUserInfo(user)),
+                                                      _ => NotFound());
+    }
 
     private static string[] GetUserInfo(LeoUser user)
     {
