@@ -1,0 +1,29 @@
+name: Deploy Blazor WASM to GH pages
+
+on:
+  push:
+    branches: [ master ]
+  permissions:
+    contents: write
+jobs:
+  deploy-to-github-pages:
+    runs-on: ubuntu-latest
+    working-directory: ./Blazor_WebAPI
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name : Install WASM-Tools
+        run: dotnet workload install wasm-tools
+      - name: Publish .NET Core Project
+        run: dotnet publish BlazorClient.csproj -c Release -o release
+      - name: Change base-tag in index.html from / to leo_keycloak_demos
+        run: sed -i 's/<base href="\/" \/>/<base href="\/leo_keycloak_demos\/" \/>/g' release/wwwroot/index.html
+      - name: Add .nojekyll file
+        run: touch release/wwwroot/.nojekyll
+      - name: Commit wwwroot to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4
+        with:
+          folder: release/wwwroot
