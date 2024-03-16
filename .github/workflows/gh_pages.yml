@@ -22,7 +22,7 @@ jobs:
       - name : Install WASM-Tools
         run: dotnet workload install wasm-tools
       - name: Publish .NET Core Project
-        run: dotnet publish BlazorClient.csproj -c Release -o release -p:PublishAOT=true
+        run: dotnet publish BlazorClient.csproj -c Release -o release -p:RunAOTCompilation=true
       - name: Change base-tag in index.html from / to leo_keycloak_demos
         run: sed -i 's/<base href="\/" \/>/<base href="\/leo_keycloak_demos\/" \/>/g' release/wwwroot/index.html
       - name: Add .nojekyll file
