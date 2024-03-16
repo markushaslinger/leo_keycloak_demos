@@ -8,11 +8,7 @@
     <MudAppBar Elevation="1" Color="Color.Primary" Dense="@true">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(_ => DrawerToggle())"/>
         <MudStack Row="@true" Justify="Justify.FlexStart" AlignItems="AlignItems.Center" Spacing="2">
-            <MudTooltip Delay="1000" Placement="Placement.End" Arrow="@true">
-                <ChildContent>
-                    <MudLink Underline="Underline.None" Href="/" Color="Color.Inherit" Typo="Typo.h5">Blazor KeyCloak Demo</MudLink>
-                </ChildContent>
-            </MudTooltip>
+            <MudLink Underline="Underline.None" Href="home" Color="Color.Inherit" Typo="Typo.h5">Blazor KeyCloak Demo</MudLink>
         </MudStack>
     </MudAppBar>
     <MudDrawer @bind-Open="@_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
