@@ -1,0 +1,3 @@
+= Blazor WASM + WebAPI Demo
+
+This demo is also hosted via GH Pages here: https://markushaslinger.github.io/leo_keycloak_demos
