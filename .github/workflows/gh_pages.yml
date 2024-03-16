@@ -27,6 +27,9 @@ jobs:
         run: sed -i 's/<base href="\/" \/>/<base href="\/leo_keycloak_demos\/" \/>/g' release/wwwroot/index.html
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
+      - name: Create 404 file 
+        # only needed for GH pages which does not provide fallback for SPA apps, little hacky
+        run: cp release/wwwroot/index.html release/wwwroot/404.html
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
