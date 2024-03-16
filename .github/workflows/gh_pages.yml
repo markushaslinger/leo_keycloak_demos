@@ -8,9 +8,11 @@ permissions:
 jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
-    defaults: 
+    defaults:
+      env:
+        WORK_DIR: "./Blazor_WebAPI"
       run:
-        working-directory: ./Blazor_WebAPI
+        working-directory: ${{ env.WORK_DIR }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup .NET Core SDK
@@ -28,4 +30,4 @@ jobs:
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
-          folder: release/wwwroot
+          folder: ${{ env.WORK_DIR }}/release/wwwroot
