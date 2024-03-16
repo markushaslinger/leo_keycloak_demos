@@ -1,0 +1,27 @@
+/* /Layout/MainLayout.razor.rz.scp.css */
+.outer[b-7eo2afmfqx] {
+    --spacing: 0.5rem;
+    margin: var(--spacing);
+
+    .inner {
+        padding: var(--spacing);
+    }
+}
+/* /Pages/ApiTest.razor.rz.scp.css */
+[b-xes1kbkvkv] .call-table {
+    max-width: 30rem;
+}
+/* /Pages/Counter.razor.rz.scp.css */
+.main-container[b-5xui5co9cr] {
+    max-width: 40%;
+}
+
+[b-5xui5co9cr] .counter-button {
+    max-width: 16rem;
+    align-self: flex-end;
+}
+/* /Pages/Home.razor.rz.scp.css */
+[b-lajodsh7fc] .login-logout-button {
+    max-width: 16rem;
+    align-self: flex-start;
+}
