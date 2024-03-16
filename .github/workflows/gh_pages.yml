@@ -8,9 +8,9 @@ permissions:
 jobs:
   deploy-to-github-pages:
     runs-on: ubuntu-latest
+    env:
+      WORK_DIR: "./Blazor_WebAPI"
     defaults:
-      env:
-        WORK_DIR: "./Blazor_WebAPI"
       run:
         working-directory: ${{ env.WORK_DIR }}
     steps:
