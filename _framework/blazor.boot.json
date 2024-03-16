@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "BlazorClient",
   "resources": {
-    "hash": "sha256-xSxCX77RcmIHe4D4dGumNCbaEFagyHlqe4GByb5KV1s=",
+    "hash": "sha256-royU/dGGu93FuX3r6prQVZhwFvF6bMvmE7f7+/fflL4=",
     "jsModuleNative": {
-      "dotnet.native.8.0.3.yt78y8amzb.js": "sha256-0MFKts/CuiiMzMBrowUd9UOwsS7ysqVk5qGfHK/bG5U="
+      "dotnet.native.8.0.3.yt78y8amzb.js": "sha256-hB5xUTSX7agcneEnDO1CA2uinrdINm6CQJPSaBRjLpI="
     },
     "jsModuleRuntime": {
       "dotnet.runtime.8.0.3.b85ar3xvhg.js": "sha256-eQgtmRxLcbxYmADDa49CHs/GuJ7nM6d/UFWo4EVhuIw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-HZZoKaCAofyTnOo38vsHciXXNP54C803P9rBgwsXq04="
+      "dotnet.native.wasm": "sha256-aKZ5GRzSSuI5w/+hzKpeACor7YLjTZ0mWzD0yuMDivI="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "BlazorClient.wasm": "sha256-feWoFVGxrtu0+8MWM+yxLJPSKtjvzxHWdaLwSjviGBY=",
+      "BlazorClient.wasm": "sha256-CfmYWqli1RbpdM0kWmDQ9Ae3n5j/ZGVaBEiAf5s6+Ok=",
       "LeoAuth.wasm": "sha256-wMfVyXdU3aG3JPEZdI2tz1prEzjzTNn1tJLRIVpZNYk=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-JZgRl9+hfhYjlOvZ0W8HHath78hVybEmf8+xdm5UAjA=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-k2S9Q1R9qZdK7aTDAJrNlC91hk8W+Fgk58LL4zNGs3c=",
@@ -62,12 +62,12 @@
       "System.Net.Http.wasm": "sha256-cRgPqz0T2WEmrqkypuC7jS2+NfZwFDIzFDYi97Mh/N0=",
       "System.Net.Primitives.wasm": "sha256-VFo6GJtX5b8mS5rEzkj8n+qmy7Pdc3CNp899ZBM/pvc=",
       "System.ObjectModel.wasm": "sha256-Ja5Qk6bU4iPV/Hz3/y4Sx32oxk4eMvtSksru4cCvxsw=",
-      "System.Private.CoreLib.wasm": "sha256-MZq6iDM3CejeOOp/ZcTxyE3hsyVmNWwWeTLQM31DEKw=",
+      "System.Private.CoreLib.wasm": "sha256-TIYyIeiElt+ArLkrpkK6IRWNIygisigfV+w5JbbIWQA=",
       "System.Private.Uri.wasm": "sha256-H+/z39KiIAjSVfkL98kuh61BKT93s8K8sfKDhBUy0Qg=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-fI/vG+reQRUV0B2Cb3cm50Eg+95Us4wxI0SodbGYEdc=",
       "System.Runtime.wasm": "sha256-wMqobuqlT4DjxyvrHg9ogN0GSkl8RNH528MHtxnbX9k=",
       "System.Security.Claims.wasm": "sha256-FOXHa9YUj79+DQ+OHke8WZ22KvqINnoQ1XABV5IuSv4=",
-      "System.Text.Encodings.Web.wasm": "sha256-+S0wf2kqGPTrUhZsRDLwQRqEKz/q7O/TNctcfwbpPPU=",
+      "System.Text.Encodings.Web.wasm": "sha256-Wk/h4ub6iW2TF0mjXrFEnA7jxvPvQM30JIx6Mwa1Z9I=",
       "System.Text.Json.wasm": "sha256-poBiMb/Iai/zdSu5t25uSzCg9DiFMGVI9iueLMDdBKM=",
       "System.Text.RegularExpressions.wasm": "sha256-3s2Pp4d2K25kcMYQ4tDKMQ25JbtjKgDeR6V/GBPzT+c=",
       "System.wasm": "sha256-ijix/9hj9oAkHz/1qfpFUM1Fam4A7B8QENm80+VWRYc="
