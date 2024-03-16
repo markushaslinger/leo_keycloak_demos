@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlazorClient",
   "resources": {
-    "hash": "sha256-royU/dGGu93FuX3r6prQVZhwFvF6bMvmE7f7+/fflL4=",
+    "hash": "sha256-3qpuL6Zm+rANwjmQevSBvilsmiQ3FG0jlAMuNWMGiAM=",
     "jsModuleNative": {
       "dotnet.native.8.0.3.yt78y8amzb.js": "sha256-hB5xUTSX7agcneEnDO1CA2uinrdINm6CQJPSaBRjLpI="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.3.b85ar3xvhg.js": "sha256-eQgtmRxLcbxYmADDa49CHs/GuJ7nM6d/UFWo4EVhuIw="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-aKZ5GRzSSuI5w/+hzKpeACor7YLjTZ0mWzD0yuMDivI="
+      "dotnet.native.wasm": "sha256-42zrhMfluuua829iDam5C/IVIBUUgwHVpAWOIzCTyps="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "BlazorClient.wasm": "sha256-CfmYWqli1RbpdM0kWmDQ9Ae3n5j/ZGVaBEiAf5s6+Ok=",
+      "BlazorClient.wasm": "sha256-O0NeastccGoxdII/HAPxZXo3EhWiMzNefWuDlL3kBrI=",
       "LeoAuth.wasm": "sha256-wMfVyXdU3aG3JPEZdI2tz1prEzjzTNn1tJLRIVpZNYk=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-JZgRl9+hfhYjlOvZ0W8HHath78hVybEmf8+xdm5UAjA=",
       "Microsoft.AspNetCore.Components.Authorization.wasm": "sha256-k2S9Q1R9qZdK7aTDAJrNlC91hk8W+Fgk58LL4zNGs3c=",
@@ -65,7 +65,7 @@
       "System.Private.CoreLib.wasm": "sha256-TIYyIeiElt+ArLkrpkK6IRWNIygisigfV+w5JbbIWQA=",
       "System.Private.Uri.wasm": "sha256-H+/z39KiIAjSVfkL98kuh61BKT93s8K8sfKDhBUy0Qg=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-fI/vG+reQRUV0B2Cb3cm50Eg+95Us4wxI0SodbGYEdc=",
-      "System.Runtime.wasm": "sha256-wMqobuqlT4DjxyvrHg9ogN0GSkl8RNH528MHtxnbX9k=",
+      "System.Runtime.wasm": "sha256-2HKsRcn23hv4LAWhpagHVMbaG3br8agoRTeT5ptlMAY=",
       "System.Security.Claims.wasm": "sha256-FOXHa9YUj79+DQ+OHke8WZ22KvqINnoQ1XABV5IuSv4=",
       "System.Text.Encodings.Web.wasm": "sha256-Wk/h4ub6iW2TF0mjXrFEnA7jxvPvQM30JIx6Mwa1Z9I=",
       "System.Text.Json.wasm": "sha256-poBiMb/Iai/zdSu5t25uSzCg9DiFMGVI9iueLMDdBKM=",
