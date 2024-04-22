@@ -1,1 +1,13 @@
-<p>api-demo works!</p>
+<div>
+  <button mat-raised-button (click)="performCall('at-least-student')" [disabled]="loading()"
+          color="primary">
+    Check if backend recognizes you as a student
+  </button>
+  <button mat-raised-button (click)="performCall('is-teacher')" [disabled]="loading()"
+          color="primary">
+    Check if backend recognizes you as a teacher
+  </button>
+  @if (showResponse()){
+    <p>{{ response() }}</p>
+  }
+</div>
