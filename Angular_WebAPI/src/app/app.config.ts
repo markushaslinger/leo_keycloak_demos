@@ -10,17 +10,20 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
-      // Configuration details for Keycloak
       config: {
         url: 'https://auth.htl-leonding.ac.at', // URL of the Keycloak server
         realm: 'htl-leonding', // Realm to be used in Keycloak
-        clientId: 'htlleonding-service' // Client ID for the application in Keycloak
+        clientId: 'htlleonding-service' // Client ID for the application in Keycloak,
       },
-      // Options for Keycloak initialization
       initOptions: {
         onLoad: 'check-sso', // Action to take on load
-        //silentCheckSsoRedirectUri:
-          //window.location.origin + '/assets/silent-check-sso.html' // URI for silent SSO checks
+        //enableLogging: true, // Enables logging
+        pkceMethod: 'S256', // Proof Key for Code Exchange (PKCE) method to use
+        // IMPORTANT: implicit flow is no longer recommended, but using standard flow leads to a 401 at the keycloak server
+        // when retrieving the token with the access code - we leave it like this for the moment until a solution is found
+        flow: 'implicit',
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html' // URI for silent SSO checks
       },
       // Enables Bearer interceptor
       enableBearerInterceptor: true,

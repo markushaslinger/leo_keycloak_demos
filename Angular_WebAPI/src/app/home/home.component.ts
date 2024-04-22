@@ -16,6 +16,9 @@ export class HomeComponent {
 
   constructor(private keycloakService: KeycloakService) {
     this.isLoggedIn = this.keycloakService.isLoggedIn();
+    this.keycloakService.getToken().then(token => {
+      console.log(token);
+    });
   }
 
   async login(): Promise<void> {
