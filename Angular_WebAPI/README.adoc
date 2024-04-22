@@ -2,4 +2,10 @@
 
 = Angular + WebAPI Demo
 
-CAUTION: Currently, always receives 401 from KeyCloak. Something in the config is still broken. Use one of the .NET demos, they work.
+Uses the shared WebAPI project.
+Provides samples for:
+
+* Retrieving token from KeyCloak
+* Using user roles with an AuthGuard
+* Using user roles in logic
+* Performing an API call which contains the bearer token (for use at the backend)
