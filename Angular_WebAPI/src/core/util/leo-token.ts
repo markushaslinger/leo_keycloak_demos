@@ -9,14 +9,14 @@ export class LeoUser {
   }
 
   public get fullName(): string | null {
-    if (!this.firstName || !this.lastName) {
+    if (this.firstName === null || this.lastName === null) {
       return null;
     }
     return `${this.firstName} ${this.lastName}`;
   }
 
   public hasRole(role: Role): boolean {
-    if (!this.role) {
+    if (this.role === null) {
       return false;
     }
     return this.role === role;
