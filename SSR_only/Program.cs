@@ -17,7 +17,7 @@ builder.Services.AddAuthentication(options =>
        .AddCookie()
        .AddOpenIdConnect(options =>
        {
-           options.Authority = "https://auth.htl-leonding.ac.at/realms/htl-leonding/";
+           options.Authority = "https://auth.htl-leonding.ac.at/realms/htlleonding/";
            options.ClientId = "htlleonding-service";
            // TODO: set client secret
            options.ClientSecret = "TODO_SET_CLIENT_SECRET";
