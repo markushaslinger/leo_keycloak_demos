@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import {KeycloakBearerInterceptor, KeycloakService} from "keycloak-angular";
-import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 // Function to initialize Keycloak with the necessary configurations
@@ -12,7 +12,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     keycloak.init({
       config: {
         url: 'https://auth.htl-leonding.ac.at', // URL of the Keycloak server
-        realm: 'htl-leonding', // Realm to be used in Keycloak
+        realm: 'htlleonding', // Realm to be used in Keycloak
         clientId: 'htlleonding-service' // Client ID for the application in Keycloak,
       },
       initOptions: {
