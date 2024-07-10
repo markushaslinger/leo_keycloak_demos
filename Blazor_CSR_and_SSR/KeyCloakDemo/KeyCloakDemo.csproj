@@ -8,9 +8,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KeyCloakDemo.Client\KeyCloakDemo.Client.csproj" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.2" />
-    <PackageReference Include="HTLLeonding.Utility.LeoAuth.Server" Version="1.0.0-preview1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.7" />
+    <PackageReference Include="HTLLeonding.Utility.LeoAuth.Server" Version="1.0.0-preview2" />
   </ItemGroup>
 
 </Project>
