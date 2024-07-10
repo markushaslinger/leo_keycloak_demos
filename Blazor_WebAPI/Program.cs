@@ -12,8 +12,8 @@ builder.Services.AddOidcAuthentication(options =>
 {
     var providerOptions = options.ProviderOptions;
     providerOptions.MetadataUrl
-        = "https://auth.htl-leonding.ac.at/realms/htl-leonding/.well-known/openid-configuration";
-    providerOptions.Authority = "https://auth.htl-leonding.ac.at/realms/htl-leonding";
+        = "https://auth.htl-leonding.ac.at/realms/htlleonding/.well-known/openid-configuration";
+    providerOptions.Authority = "https://auth.htl-leonding.ac.at/realms/htlleonding";
     providerOptions.ResponseType = "id_token token";
     providerOptions.ClientId = "htlleonding-service";
 });

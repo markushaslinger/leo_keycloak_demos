@@ -65,7 +65,7 @@ public sealed partial class ApiTest
         var options = new DialogOptions
         {
             CloseOnEscapeKey = true,
-            DisableBackdropClick = true,
+            BackdropClick = false,
             Position = DialogPosition.TopCenter
         };
         

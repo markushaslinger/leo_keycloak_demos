@@ -25,10 +25,10 @@
                     {
                         <MudStack Row="@false" Spacing="2">
                             <MudText>The following information about you is now known to the application:</MudText>
-                            <MudList>
+                            <MudList T="string">
                                 @foreach (var info in GetUserInfo(_user))
                                 {
-                                    <MudListItem>@info.Name: @info.Value</MudListItem>
+                                    <MudListItem T="string">@info.Name: @info.Value</MudListItem>
                                 }
                             </MudList>
                             <MudText>On the Counter page you can learn how to access user roles.</MudText>
