@@ -16,8 +16,8 @@ internal static class Setup
                 .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
                 {
                     options.MetadataAddress
-                        = "https://auth.htl-leonding.ac.at/realms/htl-leonding/.well-known/openid-configuration";
-                    options.Authority = "https://auth.htl-leonding.ac.at/realms/htl-leonding";
+                        = "https://auth.htl-leonding.ac.at/realms/htlleonding/.well-known/openid-configuration";
+                    options.Authority = "https://auth.htl-leonding.ac.at/realms/htlleonding";
                     options.Audience = "htlleonding-service";
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
