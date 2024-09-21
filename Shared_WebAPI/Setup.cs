@@ -25,8 +25,7 @@ internal static class Setup
                         ValidateIssuer = true,
                         // currently the audience is not set by KeyCloak for access_token - turn off if not using id_token (which you should do only for testing purposes)
                         ValidateAudience = false,
-                        // currently token issued from KeyCloak expire after 1 minute - turn on once fixed
-                        ValidateLifetime = false,
+                        ValidateLifetime = true,
                         ClockSkew = TimeSpan.FromMinutes(1)
                     };
                     options.RequireHttpsMetadata = false;
