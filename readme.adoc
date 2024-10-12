@@ -19,7 +19,7 @@ This repository contains the following demo applications -- *relevant for POSE &
 * link:./NodeJS[`NodeJS WebAPI`] example
 ** Token has to be retrieved in client application!
 
-CAUTION: All demos require you to set the `ClientSecret` for the LDAP service which you can request from a teacher -- without that it simply won't work!
+CAUTION: Some demos (with extended functionality) require you to set the `ClientSecret` for the LDAP service which you can request from a teacher if you have a good reason for regular token validation & role determination not being sufficient in your application
 Look for the `TODO`.
 
 All demos (except Angular of course) make use of the following NuGet packages:
